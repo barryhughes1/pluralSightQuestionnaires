@@ -1,0 +1,63 @@
+<aura:component >
+
+	<!-- 1. Attributes -->
+	<aura:attribute name="pageTitle" 
+			type="String"
+			default="Questionnaire"
+			description="Title of the Questionnaires" />
+	<aura:attribute name="questions" 
+			type="Object[]"
+			default="[]"
+			description="Title of the Sections of Questionnaires" />
+    <aura:attribute name="selectedQuestionnaireID"
+                    type="String"
+                    default=""
+                    description="ID of the Questionnaire to be opened" />
+    
+	<!-- 2. Handlers -->
+ 	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+	<!-- 3. Events -->
+  
+	<!-- 4. Methods -->
+	  
+	<!-- 5. Data Service Components -->  
+
+	<!-- 6. Layout -->		
+	<h2 class="slds-text-align--center slds-text-heading--large slds-m-around--large">
+	  {! v.pageTitle }
+	</h2>
+
+
+	<!-- {% for question in section.questions %} -->
+ 	<aura:iteration items="{!v.questions}" var="question">
+        <c:Questionnaire_Answer questionObj="{!question}" />
+    </aura:iteration>	
+    <!-- {% endfor %} -->
+
+	<div class="slds-box slds-m-around_x-small">
+	  <div class="slds-grid slds-wrap">
+	    <div class="slds-size_2-of-3">
+               <lightning:input type="checkbox" 
+        	                label="I accept the terms of use and participation in this questionnaire" 
+        	                name="TandCs" 
+        	                value="" />
+	    </div>
+	    <div class="slds-size_1-of-3">
+	      <div class="slds-text-align_right">
+	    	<lightning:button variant="brand" 
+	    			  label="Mark Complete" 
+	    			  iconName="utility:answer" 
+	    			  iconPosition="left" 
+                                  onclick="{! c.handleSaveClick }" />
+	    	<lightning:button variant="brand" 
+	    			  label="Back to Questionnaires" 
+	    			  iconName="utility:list" 
+	    			  iconPosition="left" 
+                                  onclick="{! c.handleBackClick }" />
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+</aura:component>

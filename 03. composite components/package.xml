@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>populateSampleQuestionnaireRecords</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Questionnaire</members>
+        <members>Questionnaire_Answer</members>
+        <members>Questionnaire_list</members>
+        <members>Questionnaire_list_app</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Questionnaires</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Questionnaire_Answer__c</members>
+        <members>Questionnaire_Question__c</members>
+        <members>Questionnaire_Returned__c</members>
+        <members>Questionnaire__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Questionnaire_Console</members>
+        <members>Questionnaire_Returned__c</members>
+        <members>Questionnaire__c</members>
+        <name>CustomTab</name>
+    </types>
+    <version>40.0</version>
+</Package>
